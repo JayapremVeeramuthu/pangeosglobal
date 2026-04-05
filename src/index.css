@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PANGEOS Corporate Design System
+   Ultra-clean, enterprise-grade, corporate-luxury aesthetic
+   Color Philosophy: Neutral, mature, trustworthy
+*/
+
+@layer base {
+  :root {
+    /* Core Brand Colors - Mature Corporate Palette */
+    --background: 40 20% 98%;
+    --foreground: 220 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
+
+    /* Primary: Deep Charcoal - Corporate Trust */
+    --primary: 220 15% 18%;
+    --primary-foreground: 40 20% 98%;
+
+    /* Secondary: Warm Stone */
+    --secondary: 35 15% 92%;
+    --secondary-foreground: 220 15% 18%;
+
+    /* Muted: Soft Gray */
+    --muted: 40 10% 95%;
+    --muted-foreground: 220 10% 45%;
+
+    /* Accent: Earthy Olive - Sustainability */
+    --accent: 75 25% 35%;
+    --accent-foreground: 40 20% 98%;
+
+    /* Destructive */
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* UI Elements */
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 220 15% 18%;
+    --radius: 0.25rem;
+
+    /* Extended Palette */
+    --charcoal: 220 15% 18%;
+    --charcoal-light: 220 10% 30%;
+    --stone: 35 15% 92%;
+    --stone-warm: 30 20% 85%;
+    --cream: 40 30% 96%;
+    --olive: 75 25% 35%;
+    --olive-light: 75 20% 45%;
+    --earth: 25 30% 40%;
+    --sand: 40 25% 90%;
+
+    /* Sidebar */
+    --sidebar-background: 40 20% 98%;
+    --sidebar-foreground: 220 15% 15%;
+    --sidebar-primary: 220 15% 18%;
+    --sidebar-primary-foreground: 40 20% 98%;
+    --sidebar-accent: 35 15% 92%;
+    --sidebar-accent-foreground: 220 15% 18%;
+    --sidebar-border: 40 15% 88%;
+    --sidebar-ring: 220 15% 18%;
+  }
+
+  .dark {
+    --background: 220 15% 10%;
+    --foreground: 40 20% 95%;
+
+    --card: 220 15% 13%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 220 15% 13%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 40 20% 95%;
+    --primary-foreground: 220 15% 10%;
+
+    --secondary: 220 10% 18%;
+    --secondary-foreground: 40 20% 95%;
+
+    --muted: 220 10% 20%;
+    --muted-foreground: 40 10% 60%;
+
+    --accent: 75 25% 45%;
+    --accent-foreground: 220 15% 10%;
+
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 10% 20%;
+    --input: 220 10% 20%;
+    --ring: 40 20% 95%;
+
+    --charcoal: 40 20% 95%;
+    --charcoal-light: 40 15% 80%;
+    --stone: 220 10% 18%;
+    --stone-warm: 220 10% 22%;
+    --cream: 220 15% 12%;
+    --olive: 75 25% 50%;
+    --olive-light: 75 20% 60%;
+    --earth: 25 30% 55%;
+    --sand: 220 10% 15%;
+
+    --sidebar-background: 220 15% 10%;
+    --sidebar-foreground: 40 20% 95%;
+    --sidebar-primary: 40 20% 95%;
+    --sidebar-primary-foreground: 220 15% 10%;
+    --sidebar-accent: 220 10% 18%;
+    --sidebar-accent-foreground: 40 20% 95%;
+    --sidebar-border: 220 10% 20%;
+    --sidebar-ring: 40 20% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold tracking-tight text-primary;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--cream)) 0%,
+      hsl(var(--stone)) 50%,
+      hsl(var(--sand)) 100%
+    );
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      hsla(220, 15%, 18%, 0.02) 0%,
+      hsla(220, 15%, 18%, 0.08) 100%
+    );
+  }
+
+  /* Card Styles */
+  .card-corporate {
+    @apply bg-card border border-border rounded-sm shadow-sm;
+    transition: all 0.3s ease;
+  }
+
+  .card-corporate:hover {
+    @apply shadow-md;
+    transform: translateY(-2px);
+  }
+
+  /* Brand Badge */
+  .brand-badge {
+    @apply inline-flex items-center px-4 py-2 text-xs font-medium tracking-widest uppercase;
+    background: hsl(var(--charcoal));
+    color: hsl(var(--cream));
+    letter-spacing: 0.15em;
+  }
+
+  /* Section Headers */
+  .section-label {
+    @apply text-xs font-medium tracking-widest uppercase text-muted-foreground mb-3;
+    letter-spacing: 0.2em;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-heading font-semibold text-primary mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-muted-foreground max-w-2xl;
+  }
+
+  /* Divider */
+  .divider-line {
+    @apply w-16 h-0.5 bg-accent;
+  }
+
+  /* Container */
+  .container-corporate {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-200;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-link-active {
+    @apply text-primary;
+  }
+
+  /* Mega Menu */
+  .mega-menu {
+    @apply absolute top-full left-0 w-full bg-card border-b border-border shadow-lg;
+    animation: slideDown 0.2s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Button Variants */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 text-sm font-medium tracking-wide uppercase;
+    background: hsl(var(--charcoal));
+    color: hsl(var(--cream));
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: hsl(var(--charcoal-light));
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-3 text-sm font-medium tracking-wide uppercase border-2;
+    border-color: hsl(var(--charcoal));
+    color: hsl(var(--charcoal));
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    background: hsl(var(--charcoal));
+    color: hsl(var(--cream));
+  }
+
+  /* Feature Card */
+  .feature-card {
+    @apply p-8 bg-card border border-border/50 transition-all duration-300;
+  }
+
+  .feature-card:hover {
+    @apply border-accent/30 shadow-sm;
+  }
+
+  /* Quote/Policy Block */
+  .policy-block {
+    @apply p-8 bg-cream border-l-4 border-accent;
+  }
+
+  /* Footer */
+  .footer-corporate {
+    background: hsl(var(--charcoal));
+    color: hsl(var(--cream));
+  }
+
+  /* Animate on scroll */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Stagger animations */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-cream {
+    background-color: hsl(var(--cream));
+  }
+
+  .bg-stone {
+    background-color: hsl(var(--stone));
+  }
+
+  .bg-charcoal {
+    background-color: hsl(var(--charcoal));
+  }
+
+  .text-charcoal {
+    color: hsl(var(--charcoal));
+  }
+
+  .border-charcoal {
+    border-color: hsl(var(--charcoal));
+  }
+}
+
+
+/* Brand card fade-up animation */
+.brand-fade {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: brandFadeUp 0.9s ease-out forwards;
+}
+
+@keyframes brandFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===== Brand scroll reveal (FROM TOP) ===== */
+
+.brand-fade {
+  opacity: 0;
+  transform: translateY(-40px); /* 👈 FROM TOP */
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.brand-fade.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
